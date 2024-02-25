@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700|Helvetica+Neue"
+    />
+  </head>
+  <header class="inset-x-0 top-0 z-50" data-cy="navbar">
+    <div
+      class="flex items-center justify-between p-6 lg:px-8 bg-sky-500"
+      aria-label="Global"
+    >
+      <div class="flex lg:flex-1">
+        <p
+          class="-m-1.5 px-4 lg:px-40 font-semibold text-xl lg:text-2xl text-white"
+          data-cy="header-title"
+        >
+          TODO LIST APP
+        </p>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container relative" data-cy="main-content">
+      <div class="flex lg:flex-1 p-6 lg:px-8 justify-between">
+        <p
+          class="-m-1.5 px-4 lg:px-40 font-semibold text-xl lg:text-2xl text-black"
+          data-cy="content-title"
+        >
+          ACTIVITY
+        </p>
+        <button
+          class="px-4 py-2 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-800"
+          data-cy="add-item-button"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 ml-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 00-1 1v6H3a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 00-1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <a
+            routerLink="/first-component"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >First Component</a
+          >
+        </button>
+      </div>
+      <div class="flex justify-center">
+        <img
+          src="/assets/images/activity-empty-state.png"
+          alt="Your Image"
+          class="mt-4"
+          style="max-width: 100%; height: auto"
+        />
+      </div>
+    </div>
+    <!-- <app-footer></app-footer> -->
+  </body>
+</html>
