@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardComponent } from './dashboard.component';
+import { AcrivityGroupsComponent } from './acrivity-groups.component';
 
-describe('DashboardComponent', () => {
-  let component: DashboardComponent;
-  let fixture: ComponentFixture<DashboardComponent>;
+describe('AcrivityGroupsComponent', () => {
+  let component: AcrivityGroupsComponent;
+  let fixture: ComponentFixture<AcrivityGroupsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DashboardComponent]
+      imports: [AcrivityGroupsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(DashboardComponent);
+    fixture = TestBed.createComponent(AcrivityGroupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
