@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Modal Background -->
+
+<div
+  class="fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-50 flex items-center justify-center"
+  *ngIf="showModal"
+>
+  <!-- Modal Content -->
+  <div class="bg-white rounded-lg p-8 max-w-md">
+    <h2 class="text-2xl font-bold mb-4">Create New Todo</h2>
+    <form (submit)="createTodo()">
+      <div class="mb-4">
+        <label for="title" class="block text-gray-700 font-bold mb-2"
+          >Title</label
+        >
+        <input
+          type="text"
+          id="title"
+          name="title"
+          [(ngModel)]="newTodo.title"
+          class="w-full border rounded-md px-3 py-2"
+          required
+        />
+      </div>
+      <div class="mb-4">
+        <label for="description" class="block text-gray-700 font-bold mb-2"
+          >Description</label
+        >
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="newTodo.description"
+          class="w-full border rounded-md px-3 py-2"
+        ></textarea>
+      </div>
+      <div class="flex justify-end">
+        <button
+          type="button"
+          class="px-4 py-2 mr-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400"
+          (click)="closeModal()"
+        >
+          Cancel
+        </button>
+        <button
+          type="submit"
+          class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+        >
+          Create
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

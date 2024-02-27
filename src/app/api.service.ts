@@ -1,5 +1,7 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+// api.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { environment } from '../../environment/environment';
 
 @Injectable({
@@ -10,15 +12,8 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllActivityGroups(email: string) {
-    const url = `${this.baseUrl}/activity-groups`;
-    const params = new HttpParams().set('email', email);
-    return this.httpClient.get(url, { params });
-  }
-
-  createActivityGroup(email: string) {
-    const url = `${this.baseUrl}/activity-groups`;
-    const body = { email };
-    return this.httpClient.post(url, body);
+  getAllActivityGroups(email: string): Observable<any[]> {
+    const url = `${this.baseUrl}/activity-groups?email=${email}`;
+    return this.httpClient.get<any[]>(url);
   }
 }

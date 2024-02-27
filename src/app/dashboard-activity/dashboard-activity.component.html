@@ -1,30 +1,33 @@
 <body>
   <div class="container relative min-w-full" data-cy="main-content">
     <div class="flex lg:flex-1 p-6 lg:px-8 justify-between">
-      <p
+      <a
         class="-m-1.5 px-4 lg:px-40 font-semibold text-xl lg:text-2xl text-black"
         data-cy="content-title"
+        routerLink="../item-list"
       >
         ACTIVITY
-      </p>
-      <button
-        class="px-4 py-2 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-800"
-        data-cy="add-item-button"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5 ml-1"
-          viewBox="0 0 20 20"
-          fill="currentColor"
+      </a>
+      <a href="../item-list">
+        <button
+          class="px-4 py-2 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-800"
+          data-cy="add-item-button"
         >
-          <path
-            fill-rule="evenodd"
-            d="M10 2a1 1 0 00-1 1v6H3a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 00-1-1z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <span class="px-2">Tambah</span>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 ml-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 2a1 1 0 00-1 1v6H3a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 00-1-1z"
+              clip-rule="evenodd"
+            />
+          </svg>
+          <span class="px-2">Tambah</span>
+        </button>
+      </a>
     </div>
     <div class="flex justify-center">
       <app-card></app-card>

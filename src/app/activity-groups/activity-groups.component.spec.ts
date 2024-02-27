@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AcrivityGroupsComponent } from './acrivity-groups.component';
+import { ActivityGroupsComponent } from './activity-groups.component';
 
-describe('AcrivityGroupsComponent', () => {
-  let component: AcrivityGroupsComponent;
-  let fixture: ComponentFixture<AcrivityGroupsComponent>;
+describe('ActivityGroupsComponent', () => {
+  let component: ActivityGroupsComponent;
+  let fixture: ComponentFixture<ActivityGroupsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AcrivityGroupsComponent]
+      imports: [ActivityGroupsComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AcrivityGroupsComponent);
+    fixture = TestBed.createComponent(ActivityGroupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

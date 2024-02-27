@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <div class="flex lg:flex-1 p-6 lg:px-8 justify-between">
   <div class="flex items-center justify-center lg:px-40">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6 mr-2"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M15 19l-7-7 7-7"
-      />
-    </svg>
+    <a href="/">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 mr-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M15 19l-7-7 7-7"
+        />
+      </svg>
+    </a>
     <p
-      class="-m-1.5 px-4 font-semibold text-xl lg:text-2xl text-black"
+      class="-m-1.5 px-4 font-semibold text-xl lg:text-2xl text-whitebg-white"
       data-cy="content-title"
       contenteditable="true"
     >
@@ -28,25 +30,37 @@
       style="max-width: 12px; height: auto"
     />
   </div>
-
-  <button
-    class="px-4 py-2 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-800"
-    data-cy="add-item-button"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-5 w-5 ml-1"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M10 2a1 1 0 00-1 1v6H3a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 00-1-1z"
-        clip-rule="evenodd"
+  <div class="flex items-center justify-center lg:px-40">
+    <button>
+      <img
+        src="/assets/images/switch-button.svg"
+        alt="pen"
+        style="max-width: 45px; height: auto; margin-right: 10px"
       />
-    </svg>
-    <span class="px-2">Tambah</span>
-  </button>
+    </button>
+    <!-- <a href=""> -->
+    <button
+      class="px-4 py-2 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-800"
+      data-cy="add-item-button"
+      (click)="openModal()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 ml-1"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10 2a1 1 0 00-1 1v6H3a1 1 0 100 2h6v6a1 1 0 102 0v-6h6a1 1 0 100-2h-6V3a1 1 0 00-1-1z"
+          clip-rule="evenodd"
+        />
+      </svg>
+
+      <span class="px-2">Tambah</span>
+    </button>
+    <!-- </a> -->
+  </div>
 </div>
 <div class="flex justify-center">
   <img
@@ -55,4 +69,50 @@
     class="mt-20"
     style="max-width: 100%; height: auto"
   />
+</div>
+
+<!-- Ini hidden ketika listnya sudah ada atau terisi -->
+<!-- <div class="flex justify-center mt-20">item list disini</div> -->
+<!-- todo-card.component.html -->
+<div class="p-6 lg:px-40 justify-between">
+  <ng-container *ngFor="let item of todoItems">
+    <div
+      class="max-w-sm rounded shadow-lg sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto mb-4 md:w-full lg:w-full xl:w-full"
+    >
+      <div class="bg-white shadow-md rounded-lg p-4 md:p-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="flex items-center">
+            <input
+              type="checkbox"
+              id="checklistButton"
+              class="mr-2"
+              (change)="toggleStrikeThrough($event)"
+            />
+            <label for="checklistButton"></label>
+            <p
+              class="px-4 py-2 text-whitebg-white"
+              [class.line-through]="strikeThrough"
+              contenteditable="true"
+            >
+              {{ item.title }}
+            </p>
+            <img
+              src="/assets/images/pen.svg"
+              alt="pen"
+              style="max-width: 12px; height: auto"
+            />
+          </div>
+          <div class="flex items-center mt-4 md:mt-0">
+            <button>
+              <img
+                src="/assets/images/delete-icon.svg"
+                alt="delete-icon"
+                style="max-width: 17px; height: auto"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
 </div>
